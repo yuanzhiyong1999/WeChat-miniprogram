@@ -1,0 +1,18 @@
+<!--pages/exchange/exchange.wxml-->
+<van-grid gutter="{{ 10 }}" column-num="3">
+  <van-grid-item use-slot  wx:for="{{ exchangeList }}" wx:key="id" bind:click="click" data-name="{{item.name}}" data-score="{{item.score}}">
+    <image
+      style="width: 100%; height: 90px;"
+      src="{{item.icon}}"
+    />
+    <text style="font-size: medium;">{{item.name}}</text>
+    <text>{{item.score}}⭐</text>
+  </van-grid-item>
+</van-grid>
+<van-dialog id="van-dialog"></van-dialog>
+<van-notify id="van-notify" />
+<van-overlay show="{{ show }}" >
+  <view class="wrapper">
+    <van-loading color="#1989fa" class="block" size="40px" text-size="20px" vertical>兑换中...</van-loading>
+  </view>
+</van-overlay>

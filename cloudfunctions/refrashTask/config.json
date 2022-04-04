@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "openapi": [
+    ]
+  },
+  "triggers": [
+
+    {
+
+      "name": "refrashTask",
+
+      "type": "timer",
+
+      "config": "0 0 1 * * * *"
+
+    }
+
+  ]
+}

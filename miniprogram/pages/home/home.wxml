@@ -1,0 +1,20 @@
+<!--pages/home/home.wxml-->
+<van-notice-bar scrollable left-icon="volume-o" text="多读书、多看报、少吃零食、多睡觉！" mode="closeable" />
+<swiper indicator-dots circular>
+  <swiper-item wx:for="{{swiperList}}" wx:key="id">
+    <image src="{{item.imageUrl}}"></image>
+  </swiper-item>
+</swiper>
+
+<view class="cell-group">
+  <van-cell-group title="出行记录">
+    <van-cell value="{{item.value}}" icon="location-o" wx:for="{{travelList}}" wx:key="id">
+      <view slot="title">
+        <view>
+        <text>{{item.title}} </text>
+          <van-tag type="danger">{{item.tag}}</van-tag>
+        </view>
+      </view>
+    </van-cell>
+  </van-cell-group>
+</view>

@@ -1,0 +1,31 @@
+<!--pages/task/task.wxml-->
+<!-- <view class="task-item" wx:for="{{taskList}}" wx:key="id" bindtap="eventHandle" data-para="{{item.name}}">
+  <view class="thumb">
+    <image src="{{item.imageUrl}}"></image>
+  </view>
+  <view class="info">
+    <text class="task-title">{{item.name}}</text>
+    <text>标签：{{item.tags}}</text>
+    <text>简介：{{item.desc}}</text>
+    <text>分值：{{item.score}}</text>
+  </view>
+</view> -->
+
+<van-card wx:for="{{taskList}}" wx:key="_id" title="{{item.name}}" tag="{{item.tags}}" thumb="{{item.imageUrl}}" desc="{{item.desc}}" 
+custom-class="rootStyle" bindtap="eventHandle" data-name="{{item.name}}" data-score="{{item.score}}">
+  <view slot="price">
+    <van-rate readonly  value="{{ item.score }}" icon="like" void-icon="like-o" />
+  </view>
+</van-card>
+<van-popup show="{{ popup }}" bind:close="onClose" position="bottom" custom-style="height: 20%;" closeable close-icon="close" round>
+<view class="popup">
+  <text>上传{{name}}照片</text>
+  <van-uploader file-list="{{ fileList }}" max-count="1" bind:after-read="afterRead" />
+</view>
+</van-popup>
+<van-notify id="van-notify" />
+<van-overlay show="{{ overlay }}" >
+  <view class="wrapper">
+    <van-loading color="#1989fa" class="block" size="40px" text-size="20px" vertical>上传中...</van-loading>
+  </view>
+</van-overlay>

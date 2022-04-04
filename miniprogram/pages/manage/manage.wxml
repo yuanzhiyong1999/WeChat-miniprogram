@@ -1,0 +1,19 @@
+<!--pages/manage/manage.wxml-->
+<view class="task-item" wx:for="{{reviewList}}" wx:key="id">
+  <view class="thumb">
+    <image src="{{item.imageUrl}}" bindtap="imagePreview" data-url="{{item.imageUrl}}"></image>
+  </view>
+  <view class="layout">
+    <view class="info">
+      <text class="task-title">{{item.name}}</text>
+      <text>状态: {{item.status}}</text>
+      <text>积分: {{item.score}} x10 分</text>
+      <text>时间: {{item.submitTime}}</text>
+    </view>
+    <view class="m_button">
+      <van-button type="primary" size="small" bind:click="pass" data-name="{{item.name}}" data-score="{{item.score}}" data-openid="{{item._openid}}">通过</van-button>
+      <van-button type="warning" size="small" bind:click="back" data-name="{{item.name}}" data-id="{{item._id}}" >驳回</van-button>
+    </view>
+  </view>
+</view>
+<van-notify id="van-notify" />

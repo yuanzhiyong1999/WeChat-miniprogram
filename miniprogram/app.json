@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/mine/mine",
+    "pages/logs/logs",
+    "pages/task/task",
+    "pages/exchange/exchange",
+    "pages/manage/manage"
+  ],
+  "tabBar": {
+    "color": "#bfbfbf",  
+    "selectedColor": "#00b26a", 
+    "borderStyle": "black", 
+    "list": [
+      {
+        "selectedIconPath": "images/tabs/home-active.png", 
+        "iconPath": "images/tabs/home.png",
+        "pagePath": "pages/home/home", 
+        "text": "首页"  
+      },
+      {
+        "selectedIconPath": "images/tabs/logs-active.png",
+        "iconPath": "images/tabs/logs.png",
+        "pagePath": "pages/task/task",
+        "text": "任务"
+      },
+      {
+        "selectedIconPath": "images/tabs/exchange-active.png",
+        "iconPath": "images/tabs/exchange.png",
+        "pagePath": "pages/exchange/exchange",
+        "text": "兑换"
+      },
+      {
+        "selectedIconPath": "images/tabs/mine-active.png",
+        "iconPath": "images/tabs/mine.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "元宝饭盒",
+    "navigationBarTextStyle":"black"
+  },
+  "sitemapLocation": "sitemap.json"
+}
